@@ -50,7 +50,7 @@ extension NewsDetailServiceImpl: NewsDetailService {
 
         do {
             let url = try urlFactory.create(withAPIPath: .main,
-                                            APIMethod: .news,
+                                            APIMethod: .detail,
                                             configuration: configuration)
             let requestFactoryConfiguration = RequestFactoryConfiguration(method: .GET,
                                                                           timoutInterval: 60.0,

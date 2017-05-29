@@ -10,7 +10,7 @@ import Foundation
 
 final class DetailPresenter {
     fileprivate struct Constants {
-        static let noNewsFoundMessage = "Новостm не найдена, нажмите ок, чтобы перезагрузить"
+        static let noNewsFoundMessage = "Новость не найдена, нажмите ок, чтобы перезагрузить"
     }
 
     fileprivate let router: DetailRouterInput
