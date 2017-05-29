@@ -17,6 +17,7 @@ class NewsFeedServiceImpl {
     fileprivate let newsMapper: BriefNewsMapper
     fileprivate let newsCleaner: NewsCleaner
     fileprivate let newsFetcher: NewsFetcher
+    fileprivate let detailNewsCleaner: DetailNewsCleaner
 
     fileprivate let queue = DispatchQueue.global()
 
@@ -26,7 +27,8 @@ class NewsFeedServiceImpl {
          deserializer: Deserializer,
          newsFetcher: NewsFetcher,
          newsMapper: BriefNewsMapper,
-         newsCleaner: NewsCleaner) {
+         newsCleaner: NewsCleaner,
+         detailNewsCleaner: DetailNewsCleaner) {
         self.urlFactory = urlFactory
         self.requestFactory = requestFactory
         self.networkClient = networkClient
@@ -34,6 +36,7 @@ class NewsFeedServiceImpl {
         self.newsMapper = newsMapper
         self.newsCleaner = newsCleaner
         self.newsFetcher = newsFetcher
+        self.detailNewsCleaner = detailNewsCleaner
     }
 }
 
@@ -88,6 +91,7 @@ extension NewsFeedServiceImpl: NewsFeedService {
                     let deserialized = try strongSelf.deserializer.deserialize(data: response)
                     try strongSelf.newsCleaner.deleteAllNews()
                     try strongSelf.newsMapper.mapAndSaveToCoreData(deserialized)
+                    try strongSelf.detailNewsCleaner.deleteAllDetailNews()
 
                     DispatchQueue.main.async {
                         completion { return }

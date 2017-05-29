@@ -48,13 +48,13 @@ class DetailViewController: UIViewController {
 extension DetailViewController: DetailViewInput {
 
     func show(news: DetailNewsModel) {
-        activityIndicator.stopAnimating()
         loadingView.isHidden = true
         messageView.isHidden = true
         tableView.isHidden = false
         
         dataDisplayManager.show(news: news)
         tableView.reloadData()
+        activityIndicator.stopAnimating()
     }
 
     func showLoading() {

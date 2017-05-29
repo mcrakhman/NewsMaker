@@ -10,6 +10,7 @@ protocol CoreFactory {
     func newsFetcher() -> NewsFetcher
     func detailNewsFetcher() -> DetailNewsFetcher
     func newsCleaner() -> NewsCleaner
+    func detailNewsCleaner() -> DetailNewsCleaner
     func briefNewsMapper() -> BriefNewsMapper
     func detailNewsMapper() -> DetailNewsMapper
     func networkClient() -> NetworkClient

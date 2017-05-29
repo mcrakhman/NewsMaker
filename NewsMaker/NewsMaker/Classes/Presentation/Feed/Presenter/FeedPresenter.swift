@@ -63,17 +63,6 @@ extension FeedPresenter: FeedInteractorOutput {
     func didReceive(news: [BriefNewsModel]) {
         view.stopRefreshing()
 
-        guard news.count > 0
-            else {
-                if currentPage == 0 {
-                    view.showMessage(Constants.noNewsFoundMessage)
-                } else {
-                    view.hideBottomSpinner()
-                }
-
-                return
-        }
-
         if currentDate == nil {
             view.replace(news: news)
             currentPage = 0
@@ -85,6 +74,15 @@ extension FeedPresenter: FeedInteractorOutput {
     }
 
     func didFail(withError error: Error) {
+        if let error = error as? InteractorError, error == .emptyDataReturned {
+            if currentPage == 0 {
+                view.showMessage(Constants.noNewsFoundMessage)
+            } else {
+                // мы дошли до конца списка
+                view.hideBottomSpinner()
+            }
+            return
+        }
         interactor.obtainNewsLocally(fromDate: nil, amount: Constants.amountPerPage)
     }
 }

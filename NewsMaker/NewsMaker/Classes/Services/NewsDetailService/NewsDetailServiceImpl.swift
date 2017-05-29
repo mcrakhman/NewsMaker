@@ -15,6 +15,7 @@ class NewsDetailServiceImpl {
     fileprivate let deserializer: Deserializer
     fileprivate let detailNewsMapper: DetailNewsMapper
     fileprivate let detailNewsFetcher: DetailNewsFetcher
+    fileprivate let detailNewsCleaner: DetailNewsCleaner
 
     fileprivate let queue = DispatchQueue.global()
 
@@ -23,13 +24,15 @@ class NewsDetailServiceImpl {
          networkClient: NetworkClient,
          deserializer: Deserializer,
          detailNewsMapper: DetailNewsMapper,
-         detailNewsFetcher: DetailNewsFetcher) {
+         detailNewsFetcher: DetailNewsFetcher,
+         detailNewsCleaner: DetailNewsCleaner) {
         self.urlFactory = urlFactory
         self.requestFactory = requestFactory
         self.networkClient = networkClient
         self.deserializer = deserializer
         self.detailNewsMapper = detailNewsMapper
         self.detailNewsFetcher = detailNewsFetcher
+        self.detailNewsCleaner = detailNewsCleaner
     }
 }
 
@@ -56,7 +59,9 @@ extension NewsDetailServiceImpl: NewsDetailService {
                                                                           timoutInterval: 60.0,
                                                                           url: url)
             let request = requestFactory.create(requestFactoryConfiguration)
-            performNetworkOperations(with: request, completion: responseCompletion)
+            performNetworkOperations(with: request,
+                                     identifier: configuration.identifier,
+                                     completion: responseCompletion)
         } catch let error {
             completion { throw error }
         }
@@ -67,6 +72,7 @@ extension NewsDetailServiceImpl: NewsDetailService {
     }
 
     private func performNetworkOperations(with request: URLRequest,
+                                          identifier: String,
                                           completion: @escaping (() throws -> Void) -> ()) {
 
         networkClient.perform(request: request) { [weak self] result in
@@ -76,6 +82,7 @@ extension NewsDetailServiceImpl: NewsDetailService {
                 do {
                     let response = try result()
                     let deserialized = try strongSelf.deserializer.deserialize(data: response)
+                    try strongSelf.detailNewsCleaner.deleteNews(withIdentifier: identifier)
                     try strongSelf.detailNewsMapper.mapAndSaveToCoreData(deserialized)
 
                     DispatchQueue.main.async {

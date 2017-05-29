@@ -32,6 +32,10 @@ class CoreFactoryImpl: BaseFactory, CoreFactory {
         return NewsCleanerImpl(context: backgroundContext)
     }
 
+    func detailNewsCleaner() -> DetailNewsCleaner {
+        return DetailNewsCleanerImpl(context: backgroundContext)
+    }
+
     func briefNewsMapper() -> BriefNewsMapper {
         return BriefNewsMapperImpl(context: backgroundContext)
     }

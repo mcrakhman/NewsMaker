@@ -40,7 +40,11 @@ extension FeedInteractor: FeedInteractorInput {
 
         do {
             let news = try newsFeedService.obtainNews(withConfiguration: configuration)
-            output.didReceive(news: news)
+            if news.count > 0 {
+                output.didReceive(news: news)
+            } else {
+                output.didFail(withError: InteractorError.emptyDataReturned)
+            }
         } catch {
             output.didFail(withError: error)
         }

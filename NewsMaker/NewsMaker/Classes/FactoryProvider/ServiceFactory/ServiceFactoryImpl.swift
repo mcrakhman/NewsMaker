@@ -15,7 +15,8 @@ class ServiceFactoryImpl: BaseFactory, ServiceFactory {
                                      networkClient: coreFactory.networkClient(),
                                      deserializer: coreFactory.jsonDeserializer(),
                                      detailNewsMapper: coreFactory.detailNewsMapper(),
-                                     detailNewsFetcher: coreFactory.detailNewsFetcher())
+                                     detailNewsFetcher: coreFactory.detailNewsFetcher(),
+                                     detailNewsCleaner: coreFactory.detailNewsCleaner())
     }
 
     func newsFeedService() -> NewsFeedService {
@@ -26,6 +27,7 @@ class ServiceFactoryImpl: BaseFactory, ServiceFactory {
                                    deserializer: coreFactory.jsonDeserializer(),
                                    newsFetcher: coreFactory.newsFetcher(),
                                    newsMapper: coreFactory.briefNewsMapper(),
-                                   newsCleaner: coreFactory.newsCleaner())
+                                   newsCleaner: coreFactory.newsCleaner(),
+                                   detailNewsCleaner: coreFactory.detailNewsCleaner())
     }
 }
