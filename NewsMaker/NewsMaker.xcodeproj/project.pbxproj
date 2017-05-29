@@ -98,6 +98,11 @@
 		9EFC72911EDBFCF30002D469 /* NewsDetailServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC72901EDBFCF30002D469 /* NewsDetailServiceImpl.swift */; };
 		9EFC72941EDC08280002D469 /* ModuleConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC72931EDC08280002D469 /* ModuleConfigurable.swift */; };
 		9EFC72961EDC099F0002D469 /* DetailModuleConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC72951EDC099F0002D469 /* DetailModuleConfiguration.swift */; };
+		9EFC72981EDC133D0002D469 /* DetailNewsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC72971EDC133D0002D469 /* DetailNewsMapper.swift */; };
+		9EFC729A1EDC13DE0002D469 /* DetailNewsMapperImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC72991EDC13DE0002D469 /* DetailNewsMapperImpl.swift */; };
+		9EFC729C1EDC18F50002D469 /* NewsDetailServiceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC729B1EDC18F50002D469 /* NewsDetailServiceConfiguration.swift */; };
+		9EFC729F1EDC1A700002D469 /* DetailNewsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC729E1EDC1A700002D469 /* DetailNewsFetcher.swift */; };
+		9EFC72A11EDC1A9F0002D469 /* DetailNewsFetcherImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC72A01EDC1A9F0002D469 /* DetailNewsFetcherImpl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -193,6 +198,11 @@
 		9EFC72901EDBFCF30002D469 /* NewsDetailServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailServiceImpl.swift; sourceTree = "<group>"; };
 		9EFC72931EDC08280002D469 /* ModuleConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleConfigurable.swift; sourceTree = "<group>"; };
 		9EFC72951EDC099F0002D469 /* DetailModuleConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailModuleConfiguration.swift; sourceTree = "<group>"; };
+		9EFC72971EDC133D0002D469 /* DetailNewsMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailNewsMapper.swift; sourceTree = "<group>"; };
+		9EFC72991EDC13DE0002D469 /* DetailNewsMapperImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailNewsMapperImpl.swift; sourceTree = "<group>"; };
+		9EFC729B1EDC18F50002D469 /* NewsDetailServiceConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailServiceConfiguration.swift; sourceTree = "<group>"; };
+		9EFC729E1EDC1A700002D469 /* DetailNewsFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailNewsFetcher.swift; sourceTree = "<group>"; };
+		9EFC72A01EDC1A9F0002D469 /* DetailNewsFetcherImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailNewsFetcherImpl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -588,6 +598,8 @@
 		9EFC72331ED9B4600002D469 /* DetailNewsMapper */ = {
 			isa = PBXGroup;
 			children = (
+				9EFC72971EDC133D0002D469 /* DetailNewsMapper.swift */,
+				9EFC72991EDC13DE0002D469 /* DetailNewsMapperImpl.swift */,
 			);
 			path = DetailNewsMapper;
 			sourceTree = "<group>";
@@ -615,6 +627,7 @@
 			isa = PBXGroup;
 			children = (
 				9EFC72521EDAB1800002D469 /* NewsFeedServiceConfiguration.swift */,
+				9EFC729B1EDC18F50002D469 /* NewsDetailServiceConfiguration.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -622,6 +635,7 @@
 		9EFC72541EDAB5030002D469 /* NewsFetcher */ = {
 			isa = PBXGroup;
 			children = (
+				9EFC729D1EDC1A630002D469 /* DetailNewsFetcher */,
 				9EFC72551EDAB5100002D469 /* NewsFetcher.swift */,
 				9EFC72571EDAB5220002D469 /* NewsFetcherImpl.swift */,
 			);
@@ -744,6 +758,15 @@
 			path = ModuleConfigurable;
 			sourceTree = "<group>";
 		};
+		9EFC729D1EDC1A630002D469 /* DetailNewsFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				9EFC729E1EDC1A700002D469 /* DetailNewsFetcher.swift */,
+				9EFC72A01EDC1A9F0002D469 /* DetailNewsFetcherImpl.swift */,
+			);
+			path = DetailNewsFetcher;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -823,6 +846,7 @@
 			files = (
 				9EFC72151ED878020002D469 /* RequestFactory.swift in Sources */,
 				9EFC71FE1ED868A30002D469 /* TableViewHeightCalculator.swift in Sources */,
+				9EFC72981EDC133D0002D469 /* DetailNewsMapper.swift in Sources */,
 				9EFC71EB1ED85E130002D469 /* HelperFactory.swift in Sources */,
 				9EFC721E1ED878020002D469 /* NetworkClientImplementation.swift in Sources */,
 				9EFC721D1ED878020002D469 /* NetworkClient.swift in Sources */,
@@ -837,6 +861,7 @@
 				9EFC72351ED9B46E0002D469 /* BriefNewsMapper.swift in Sources */,
 				9EFC71D51ED85CDC0002D469 /* FeedDataDisplayManager.swift in Sources */,
 				9EFC72891EDBFB4B0002D469 /* DetailDataDisplayManagerImpl.swift in Sources */,
+				9EFC729C1EDC18F50002D469 /* NewsDetailServiceConfiguration.swift in Sources */,
 				9EFC72471ED9F0EB0002D469 /* NewsCleanerImpl.swift in Sources */,
 				9EFC72131ED878020002D469 /* NetworkRequestConstants.swift in Sources */,
 				9EFC72201ED878020002D469 /* JSONDeserializer.swift in Sources */,
@@ -845,7 +870,9 @@
 				9EFC72811EDBFB4B0002D469 /* NewsDetailTextCellViewModel.swift in Sources */,
 				9EFC727A1EDBFB4B0002D469 /* DetailInteractorInput.swift in Sources */,
 				9EFC728C1EDBFB4B0002D469 /* DetailViewOutput.swift in Sources */,
+				9EFC72A11EDC1A9F0002D469 /* DetailNewsFetcherImpl.swift in Sources */,
 				9EFC72531EDAB1800002D469 /* NewsFeedServiceConfiguration.swift in Sources */,
+				9EFC729F1EDC1A700002D469 /* DetailNewsFetcher.swift in Sources */,
 				9EFC71AA1ED85A220002D469 /* UITableView.swift in Sources */,
 				9EFC727B1EDBFB4B0002D469 /* DetailInteractorOutput.swift in Sources */,
 				9EFC71DF1ED85D510002D469 /* NewsFeedCellViewModel.swift in Sources */,
@@ -882,6 +909,7 @@
 				9EFC71B71ED85AB00002D469 /* AppDelegate.swift in Sources */,
 				9EFC72961EDC099F0002D469 /* DetailModuleConfiguration.swift in Sources */,
 				9EFC72581EDAB5220002D469 /* NewsFetcherImpl.swift in Sources */,
+				9EFC729A1EDC13DE0002D469 /* DetailNewsMapperImpl.swift in Sources */,
 				9EFC71E91ED85E0A0002D469 /* CoreFactoryImpl.swift in Sources */,
 				9EFC71D91ED85D1B0002D469 /* FeedCellViewModelFactory.swift in Sources */,
 				9EFC71ED1ED85E1E0002D469 /* HelperFactoryImpl.swift in Sources */,

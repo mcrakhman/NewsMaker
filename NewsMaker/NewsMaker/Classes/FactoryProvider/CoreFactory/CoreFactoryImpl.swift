@@ -24,12 +24,20 @@ class CoreFactoryImpl: BaseFactory, CoreFactory {
         return NewsFetcherImpl(context: defaultContext)
     }
 
+    func detailNewsFetcher() -> DetailNewsFetcher {
+        return DetailNewsFetcherImpl(context: defaultContext)
+    }
+
     func newsCleaner() -> NewsCleaner {
         return NewsCleanerImpl(context: backgroundContext)
     }
 
     func briefNewsMapper() -> BriefNewsMapper {
         return BriefNewsMapperImpl(context: backgroundContext)
+    }
+
+    func detailNewsMapper() -> DetailNewsMapper{
+        return DetailNewsMapperImpl(context: backgroundContext)
     }
 
     func networkClient() -> NetworkClient {

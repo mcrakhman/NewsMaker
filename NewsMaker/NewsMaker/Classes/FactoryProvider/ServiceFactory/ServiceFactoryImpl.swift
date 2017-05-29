@@ -13,7 +13,9 @@ class ServiceFactoryImpl: BaseFactory, ServiceFactory {
         return NewsDetailServiceImpl(urlFactory: coreFactory.urlFactory(),
                                      requestFactory: coreFactory.requestFactory(),
                                      networkClient: coreFactory.networkClient(),
-                                     deserializer: coreFactory.jsonDeserializer())
+                                     deserializer: coreFactory.jsonDeserializer(),
+                                     detailNewsMapper: coreFactory.detailNewsMapper(),
+                                     detailNewsFetcher: coreFactory.detailNewsFetcher())
     }
 
     func newsFeedService() -> NewsFeedService {

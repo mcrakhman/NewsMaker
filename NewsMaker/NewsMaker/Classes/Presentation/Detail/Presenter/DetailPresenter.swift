@@ -9,6 +9,9 @@
 import Foundation
 
 final class DetailPresenter {
+    fileprivate struct Constants {
+        static let noNewsFoundMessage = "Новостm не найдена, нажмите ок, чтобы перезагрузить"
+    }
 
     fileprivate let router: DetailRouterInput
     fileprivate weak var view: DetailViewInput!
@@ -40,11 +43,15 @@ extension DetailPresenter: DetailViewOutput {
 
 extension DetailPresenter: DetailInteractorOutput {
     func didReceive(news: DetailNewsModel) {
-
+        view.show(news: news)
     }
 
     func didFail(withError error: Error) {
-        interactor.obtainNewsLocally(withId: identifier)
+        if let error = error as? InteractorError, error == .emptyDataReturned {
+            view.showMessage(Constants.noNewsFoundMessage)
+        } else {
+            interactor.obtainNewsLocally(withId: identifier)
+        }
     }
 }
 

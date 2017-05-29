@@ -8,6 +8,10 @@
 
 import Foundation
 
+enum InteractorError: Error {
+    case emptyDataReturned
+}
+
 final class DetailInteractor {
     weak var output: DetailInteractorOutput!
     fileprivate let newsDetailService: NewsDetailService
@@ -26,18 +30,28 @@ extension DetailInteractor: DetailInteractorInput {
             }
             do {
                 let news = try response()
-                strongSelf.output.didReceive(news: news)
+                if let news = news {
+                    strongSelf.output.didReceive(news: news)
+                } else {
+                    strongSelf.output.didFail(withError: InteractorError.emptyDataReturned)
+                }
             } catch {
                 strongSelf.output.didFail(withError: error)
             }
         }
-        newsDetailService.updateNews(withId: identifier, completion: completion)
+        let configuration = NewsDetailServiceConfiguration(identifier: identifier)
+        newsDetailService.updateNews(withConfiguration: configuration, completion: completion)
     }
 
     func obtainNewsLocally(withId identifier: String) {
+        let configuration = NewsDetailServiceConfiguration(identifier: identifier)
         do {
-            let news = try newsDetailService.obtainNews(withId: identifier)
-            //output.didReceive(news: news)
+            let news = try newsDetailService.obtainNews(withConfiguration: configuration)
+            if let news = news {
+                output.didReceive(news: news)
+            } else {
+                output.didFail(withError: InteractorError.emptyDataReturned)
+            }
         } catch {
             output.didFail(withError: error)
         }

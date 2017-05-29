@@ -14,5 +14,4 @@ class BriefNewsModel: NSManagedObject {
     @NSManaged var bankInfoTypeIdentifier: Int
     @NSManaged var identifier: String
     @NSManaged var publicationDate: NSDate
-    @NSManaged var detailModel: DetailNewsModel?
 }

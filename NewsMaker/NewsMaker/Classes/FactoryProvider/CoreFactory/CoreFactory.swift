@@ -8,8 +8,10 @@
 
 protocol CoreFactory {
     func newsFetcher() -> NewsFetcher
+    func detailNewsFetcher() -> DetailNewsFetcher
     func newsCleaner() -> NewsCleaner
     func briefNewsMapper() -> BriefNewsMapper
+    func detailNewsMapper() -> DetailNewsMapper
     func networkClient() -> NetworkClient
     func urlFactory() -> URLFactory
     func requestFactory() -> RequestFactory

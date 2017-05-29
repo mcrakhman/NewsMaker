@@ -1,14 +1,14 @@
 //
-//  BriefNewsMapperImpl.swift
+//  DetailNewsMapperImpl.swift
 //  NewsMaker
 //
-//  Created by m.rakhmanov on 27.05.17.
+//  Created by m.rakhmanov on 29.05.17.
 //  Copyright © 2017 HeadHunterLLC. All rights reserved.
 //
 
 import CoreData
 
-class BriefNewsMapperImpl {
+class DetailNewsMapperImpl {
 
     fileprivate struct Constants {
         static let millisecondsInSecond = 1000.0
@@ -21,34 +21,35 @@ class BriefNewsMapperImpl {
     }
 }
 
-extension BriefNewsMapperImpl: BriefNewsMapper {
+extension DetailNewsMapperImpl: DetailNewsMapper {
     func mapAndSaveToCoreData(_ object: Any) throws {
         guard let jsonDict = object as? [String: Any],
-              let payloadArray = jsonDict["payload"] as? [[String: Any]]
+              let payload = jsonDict["payload"] as? [String: Any]
             else {
                 throw MapperError.cannotParseData
         }
 
         try context.performAndWaitSaveInParent {
-            for payload in payloadArray {
-                self.mapElement(payload)
-            }
+            self.mapElement(payload)
         }
     }
 
     private func mapElement(_ element: [String: Any]) {
-        let model: BriefNewsModel = context.insertObject()
+        let model: DetailNewsModel = context.insertObject()
+        model.creationDate = date(fromDictionary: element, forKey: "creationDate") ?? NSDate()
+        model.lastModificationDate = date(fromDictionary: element, forKey: "lastModificationDate") ?? NSDate()
 
-        model.apiName = element["name"] as? String ?? ""
-        model.identifier = element["id"] as? String ?? ""
-        model.text = element["text"] as? String ?? ""
-        model.bankInfoTypeIdentifier = element["bankInfoTypeId"] as? Int ?? 0
-        model.publicationDate = date(fromDictionary: element, forKey: "publicationDate") ?? NSDate()
+        if let titleDictionary = element["title"] as? [String: Any] {
+            model.identifier = titleDictionary["id"] as? String ?? ""
+            model.title = titleDictionary["text"] as? String ?? ""
+        }
+
+        model.content = element["content"] as? String ?? ""
     }
 
     private func date(fromDictionary dictionary: [String: Any], forKey key: String) -> NSDate? {
         guard let publicationDate = dictionary[key] as? [String: Any],
-            let milliseconds = publicationDate["milliseconds"] as? Int
+              let milliseconds = publicationDate["milliseconds"] as? Int
             else {
                 return nil
         }

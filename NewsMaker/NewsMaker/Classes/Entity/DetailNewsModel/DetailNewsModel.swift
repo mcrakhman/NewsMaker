@@ -9,10 +9,9 @@
 import CoreData
 
 class DetailNewsModel: NSManagedObject {
-    @NSManaged var typeIdentifier: String
-    @NSManaged var bankInfoTypeIdentifier: Int
+    @NSManaged var title: String
+    @NSManaged var identifier: String
     @NSManaged var content: String
     @NSManaged var creationDate: NSDate
     @NSManaged var lastModificationDate: NSDate
-    @NSManaged var detailModel: BriefNewsModel?
 }
