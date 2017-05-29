@@ -14,4 +14,5 @@ class DetailNewsModel: NSManagedObject {
     @NSManaged var content: String
     @NSManaged var creationDate: NSDate
     @NSManaged var lastModificationDate: NSDate
+    @NSManaged var publicationDate: NSDate
 }

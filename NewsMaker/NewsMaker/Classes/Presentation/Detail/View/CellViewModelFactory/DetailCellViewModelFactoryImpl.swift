@@ -18,7 +18,7 @@ class DetailCellViewModelFactoryImpl: DetailCellViewModelFactory {
     }
 
     func viewModels(fromNews news: DetailNewsModel) -> [CellViewModel] {
-        let dateString = dateFormatter.string(from: news.creationDate as Date)
+        let dateString = dateFormatter.string(from: news.publicationDate as Date)
         let title = news.title.toHtmlAttributedString()?.string ?? ""
         let titleModel = NewsDetailTitleCellViewModel(dateString: dateString,
                                                       text: title)

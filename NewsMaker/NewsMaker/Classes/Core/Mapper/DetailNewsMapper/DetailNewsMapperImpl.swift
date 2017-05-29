@@ -40,6 +40,7 @@ extension DetailNewsMapperImpl: DetailNewsMapper {
         model.lastModificationDate = date(fromDictionary: element, forKey: "lastModificationDate") ?? NSDate()
 
         if let titleDictionary = element["title"] as? [String: Any] {
+            model.publicationDate = date(fromDictionary: titleDictionary, forKey: "publicationDate") ?? NSDate()
             model.identifier = titleDictionary["id"] as? String ?? ""
             model.title = titleDictionary["text"] as? String ?? ""
         }

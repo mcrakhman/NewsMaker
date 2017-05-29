@@ -12,10 +12,11 @@
         <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastModificationDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="publicationDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="BriefNewsModel" positionX="-54" positionY="-162" width="128" height="120"/>
-        <element name="DetailNewsModel" positionX="378" positionY="-177" width="128" height="120"/>
+        <element name="DetailNewsModel" positionX="378" positionY="-177" width="128" height="135"/>
     </elements>
 </model>
