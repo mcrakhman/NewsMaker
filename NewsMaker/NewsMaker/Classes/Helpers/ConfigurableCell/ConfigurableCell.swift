@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol CalculatableHeightCell {
+    func calculateHeight(forWidth width: CGFloat, viewModel: CellViewModel) -> CGFloat
+}
+
 protocol ConfigurableCell {
     static var identifier: String { get }
 

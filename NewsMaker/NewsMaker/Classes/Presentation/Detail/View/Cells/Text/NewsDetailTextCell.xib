@@ -18,24 +18,28 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="67.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0f-uw-7Pt">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QX7-8P-Uib">
                         <rect key="frame" x="15" y="5" width="345" height="57.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                    </textView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="l0f-uw-7Pt" secondAttribute="bottom" constant="5" id="0DP-ZJ-GRM"/>
-                    <constraint firstAttribute="trailing" secondItem="l0f-uw-7Pt" secondAttribute="trailing" constant="15" id="HFu-LP-D4T"/>
-                    <constraint firstItem="l0f-uw-7Pt" firstAttribute="leading" secondItem="JW6-bK-w0S" secondAttribute="leading" constant="15" id="bOm-GC-ywy"/>
-                    <constraint firstItem="l0f-uw-7Pt" firstAttribute="top" secondItem="JW6-bK-w0S" secondAttribute="top" constant="5" id="gKh-zo-FNr"/>
+                    <constraint firstItem="QX7-8P-Uib" firstAttribute="top" secondItem="JW6-bK-w0S" secondAttribute="top" constant="5" id="FDF-BG-TVQ"/>
+                    <constraint firstAttribute="bottom" secondItem="QX7-8P-Uib" secondAttribute="bottom" constant="5" id="Q9B-mp-oj3"/>
+                    <constraint firstAttribute="trailing" secondItem="QX7-8P-Uib" secondAttribute="trailing" constant="15" id="mTL-nK-4Do"/>
+                    <constraint firstItem="QX7-8P-Uib" firstAttribute="leading" secondItem="JW6-bK-w0S" secondAttribute="leading" constant="15" id="oke-n5-x62"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="contentLabel" destination="l0f-uw-7Pt" id="Vrd-r4-VSK"/>
-                <outlet property="contentLabelLeadingConstraint" destination="bOm-GC-ywy" id="Oif-hK-lu0"/>
-                <outlet property="contentLabelTrailingConstraint" destination="HFu-LP-D4T" id="inn-gb-mc1"/>
+                <outlet property="textView" destination="QX7-8P-Uib" id="wAH-cP-paQ"/>
+                <outlet property="textViewBottomConstraint" destination="Q9B-mp-oj3" id="Qh0-W9-dhz"/>
+                <outlet property="textViewLeadingConstraint" destination="oke-n5-x62" id="Fqi-RT-PzJ"/>
+                <outlet property="textViewTopConstraint" destination="FDF-BG-TVQ" id="cbK-3W-Kh7"/>
+                <outlet property="textViewTrailingConstraint" destination="mTL-nK-4Do" id="iHQ-Pp-75b"/>
             </connections>
             <point key="canvasLocation" x="9.5" y="-191"/>
         </tableViewCell>

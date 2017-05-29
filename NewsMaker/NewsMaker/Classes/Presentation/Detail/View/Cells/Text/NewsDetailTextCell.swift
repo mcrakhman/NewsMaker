@@ -10,16 +10,21 @@ import UIKit
 
 class NewsDetailTextCell: UITableViewCell {
 
-    @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var textView: UITextView!
 
-    @IBOutlet weak var contentLabelLeadingConstraint: NSLayoutConstraint!
-    @IBOutlet weak var contentLabelTrailingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var textViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var textViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var textViewLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var textViewTrailingConstraint: NSLayoutConstraint!
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        textView.textContainer.lineFragmentPadding = 0
+        textView.textContainerInset = .zero
+    }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        contentLabel.preferredMaxLayoutWidth = contentView.bounds.width
-            - contentLabelLeadingConstraint.constant
-            - contentLabelTrailingConstraint.constant
     }
 }
 
@@ -27,6 +32,20 @@ extension NewsDetailTextCell: ConfigurableCell {
     func configure(with viewModel: CellViewModel) {
         guard let viewModel = viewModel as? NewsDetailTextCellViewModel else { return }
         
-        contentLabel.attributedText = viewModel.text
+        textView.attributedText = viewModel.text
+    }
+}
+
+extension NewsDetailTextCell: CalculatableHeightCell {
+    func calculateHeight(forWidth width: CGFloat, viewModel: CellViewModel) -> CGFloat {
+        guard let viewModel = viewModel as? NewsDetailTextCellViewModel else { return 0 }
+
+        textView.attributedText = viewModel.text
+        let adjustedWidth = width - textViewLeadingConstraint.constant - textViewTrailingConstraint.constant
+        let initialSize = CGSize(width: adjustedWidth,
+                                 height: CGFloat.greatestFiniteMagnitude)
+        let size = textView.sizeThatFits(initialSize)
+        
+        return ceil(size.height) + textViewTopConstraint.constant + textViewBottomConstraint.constant
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class DetailCellViewModelFactoryImpl: DetailCellViewModelFactory {
 
@@ -21,7 +22,30 @@ class DetailCellViewModelFactoryImpl: DetailCellViewModelFactory {
         let title = news.title.toHtmlAttributedString()?.string ?? ""
         let titleModel = NewsDetailTitleCellViewModel(dateString: dateString,
                                                       text: title)
-        let textModel = NewsDetailTextCellViewModel(text: news.content.toHtmlAttributedString() ?? NSAttributedString())
+
+        let contentAttributedString = attributedString(fromContent: news.content)
+        let textModel = NewsDetailTextCellViewModel(text: contentAttributedString)
+
         return [titleModel, textModel]
+    }
+
+    private func attributedString(fromContent content: String) -> NSAttributedString {
+        let contentAttributedString = content.toHtmlAttributedString()?.mutableCopy() as? NSMutableAttributedString ?? NSMutableAttributedString()
+
+        let rangeOfString = NSMakeRange(0, contentAttributedString.length)
+        let font = UIFont.systemFont(ofSize: 14.0, weight: UIFontWeightRegular)
+
+        contentAttributedString.enumerateAttribute(NSFontAttributeName,
+                                                   in: rangeOfString,
+                                                   options: .longestEffectiveRangeNotRequired,
+                                                   using: { value, range, pointer in
+                if (value as? UIFont) != nil {
+                    contentAttributedString.addAttribute(NSFontAttributeName,
+                                                         value: font,
+                                                         range: range)
+                }
+        })
+
+        return contentAttributedString.copy() as? NSAttributedString ?? NSAttributedString()
     }
 }

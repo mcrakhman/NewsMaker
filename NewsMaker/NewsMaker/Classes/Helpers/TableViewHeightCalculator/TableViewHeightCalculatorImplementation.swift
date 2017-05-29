@@ -31,6 +31,13 @@ class TableViewHeightCalculatorImpl: TableViewHeightCalculator {
         
         guard let cell = prototypeCell,
               let configurable = prototypeCell as? ConfigurableCell else { return 0 }
+
+        if let calculatable = configurable as? CalculatableHeightCell {
+            let height = calculatable.calculateHeight(forWidth: tableView.bounds.size.width, viewModel: viewModel)
+            cachedHeights[row] = height
+
+            return height
+        }
         
         cell.prepareForReuse()
         configurable.configure(with: viewModel)
