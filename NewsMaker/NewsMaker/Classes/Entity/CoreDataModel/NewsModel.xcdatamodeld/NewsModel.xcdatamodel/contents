@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="BriefNewsModel" representedClassName=".BriefNewsModel" syncable="YES">
+        <attribute name="apiName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bankInfoTypeIdentifier" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="publicationDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="detailModel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DetailNewsModel" inverseName="titleModel" inverseEntity="DetailNewsModel" syncable="YES"/>
+    </entity>
+    <entity name="DetailNewsModel" representedClassName=".DetailNewsModel" syncable="YES">
+        <attribute name="bankInfoTypeIdentifier" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lastModificationDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="typeIdentifier" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="titleModel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BriefNewsModel" inverseName="detailModel" inverseEntity="BriefNewsModel" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="BriefNewsModel" positionX="-54" positionY="-162" width="128" height="133"/>
+        <element name="DetailNewsModel" positionX="378" positionY="-177" width="128" height="133"/>
+    </elements>
+</model>

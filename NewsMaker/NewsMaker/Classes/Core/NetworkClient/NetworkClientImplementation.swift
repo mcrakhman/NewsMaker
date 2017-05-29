@@ -1,0 +1,58 @@
+//
+//  NetworkClientImplementation.swift
+//  GithubItunesViewer
+//
+//  Created by m.rakhmanov on 21.01.17.
+//  Copyright © 2017 m.rakhmanov. All rights reserved.
+//
+
+import Foundation
+
+enum NetworkClientError: Error {
+    case emptyDataReturned
+}
+
+class NetworkClientImplementation: NetworkClient {
+
+    private let session: URLSession
+    
+    init(session: URLSession) {
+        self.session = session
+    }
+    
+    func perform(request: URLRequest, completion: NetworkClientCompletion?) {
+        let dataTask = session.dataTask(with: request) { data, response, error in
+            
+            completion? {
+                if let networkError = error {
+                    throw networkError
+                }
+                
+                guard let responseData = data else {
+                    throw NetworkClientError.emptyDataReturned
+                }
+                
+                return responseData
+            }
+        }
+        dataTask.resume()
+    }
+    
+    func data(from url: URL, completion: NetworkClientCompletion?) {
+        let dataTask = session.dataTask(with: url) { data, response, error in
+            
+            completion? {
+                if let networkError = error {
+                    throw networkError
+                }
+                
+                guard let responseData = data else {
+                    throw NetworkClientError.emptyDataReturned
+                }
+                
+                return responseData
+            }
+        }
+        dataTask.resume()
+    }
+}

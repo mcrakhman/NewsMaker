@@ -1,0 +1,18 @@
+//
+//  DetailNewsModel.swift
+//  NewsMaker
+//
+//  Created by m.rakhmanov on 27.05.17.
+//  Copyright © 2017 HeadHunterLLC. All rights reserved.
+//
+
+import CoreData
+
+class DetailNewsModel: NSManagedObject {
+    @NSManaged var typeIdentifier: String
+    @NSManaged var bankInfoTypeIdentifier: Int
+    @NSManaged var content: String
+    @NSManaged var creationDate: NSDate
+    @NSManaged var lastModificationDate: NSDate
+    @NSManaged var detailModel: BriefNewsModel?
+}
