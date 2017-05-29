@@ -27,6 +27,6 @@ extension NewsDetailTextCell: ConfigurableCell {
     func configure(with viewModel: CellViewModel) {
         guard let viewModel = viewModel as? NewsDetailTextCellViewModel else { return }
         
-        contentLabel.text = viewModel.text
+        contentLabel.attributedText = viewModel.text
     }
 }

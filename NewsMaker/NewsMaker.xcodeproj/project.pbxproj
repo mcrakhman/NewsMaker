@@ -103,6 +103,7 @@
 		9EFC729C1EDC18F50002D469 /* NewsDetailServiceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC729B1EDC18F50002D469 /* NewsDetailServiceConfiguration.swift */; };
 		9EFC729F1EDC1A700002D469 /* DetailNewsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC729E1EDC1A700002D469 /* DetailNewsFetcher.swift */; };
 		9EFC72A11EDC1A9F0002D469 /* DetailNewsFetcherImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC72A01EDC1A9F0002D469 /* DetailNewsFetcherImpl.swift */; };
+		9EFC72A31EDC26CF0002D469 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC72A21EDC26CF0002D469 /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -203,6 +204,7 @@
 		9EFC729B1EDC18F50002D469 /* NewsDetailServiceConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailServiceConfiguration.swift; sourceTree = "<group>"; };
 		9EFC729E1EDC1A700002D469 /* DetailNewsFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailNewsFetcher.swift; sourceTree = "<group>"; };
 		9EFC72A01EDC1A9F0002D469 /* DetailNewsFetcherImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailNewsFetcherImpl.swift; sourceTree = "<group>"; };
+		9EFC72A21EDC26CF0002D469 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +281,7 @@
 				9EFC719E1ED85A220002D469 /* UIViewController.swift */,
 				9EFC723A1ED9B9480002D469 /* NSManagedObject.swift */,
 				9EFC723C1ED9B9550002D469 /* NSManagedObjectContext.swift */,
+				9EFC72A21EDC26CF0002D469 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -856,6 +859,7 @@
 				9EFC71A91ED85A220002D469 /* UIStoryboard.swift in Sources */,
 				9EFC721F1ED878020002D469 /* Deserializer.swift in Sources */,
 				9EFC71CC1ED85C450002D469 /* FeedInteractor.swift in Sources */,
+				9EFC72A31EDC26CF0002D469 /* String.swift in Sources */,
 				9EFC71F51ED85E530002D469 /* UserStoryFactoryImpl.swift in Sources */,
 				9EFC72171ED878020002D469 /* RequestFactoryImplementation.swift in Sources */,
 				9EFC72351ED9B46E0002D469 /* BriefNewsMapper.swift in Sources */,

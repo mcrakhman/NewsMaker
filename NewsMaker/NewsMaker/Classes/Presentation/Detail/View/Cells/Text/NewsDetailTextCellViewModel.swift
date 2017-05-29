@@ -6,11 +6,13 @@
 //  Copyright © 2017 HeadHunterLLC. All rights reserved.
 //
 
+import Foundation
+
 struct NewsDetailTextCellViewModel: CellViewModel {
     let associatedCell: ConfigurableCell.Type = NewsDetailTextCell.self
-    let text: String
+    let text: NSAttributedString
 
-    init(text: String) {
+    init(text: NSAttributedString) {
         self.text = text
     }
 }

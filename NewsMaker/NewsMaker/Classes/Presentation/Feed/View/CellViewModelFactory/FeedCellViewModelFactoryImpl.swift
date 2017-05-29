@@ -21,8 +21,10 @@ class FeedCellViewModelFactoryImpl: FeedCellViewModelFactory {
     }
 
     private func viewModel(from model: BriefNewsModel) -> NewsFeedCellViewModel {
-        return NewsFeedCellViewModel(dateString: dateFormatter.string(from: model.publicationDate as Date),
-                                     text: model.text,
+        let dateString = dateFormatter.string(from: model.publicationDate as Date)
+        let title = model.text.toHtmlAttributedString()?.string ?? ""
+        return NewsFeedCellViewModel(dateString: dateString,
+                                     text: title,
                                      identifier: model.identifier)
     }
 }
