@@ -49,6 +49,10 @@ extension FeedPresenter: FeedViewOutput {
         refreshNews()
     }
 
+    func didSelectNews(withIdentifier identifier: String) {
+        router.showDetailNews(withIdentifier: identifier)
+    }
+
     fileprivate func refreshNews() {
         currentDate = nil
         interactor.findNews(fromDate: nil, amount: Constants.amountPerPage)

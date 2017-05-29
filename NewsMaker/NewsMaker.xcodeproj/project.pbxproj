@@ -75,6 +75,29 @@
 		9EFC72561EDAB5100002D469 /* NewsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC72551EDAB5100002D469 /* NewsFetcher.swift */; };
 		9EFC72581EDAB5220002D469 /* NewsFetcherImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC72571EDAB5220002D469 /* NewsFetcherImpl.swift */; };
 		9EFC725A1EDAE54F0002D469 /* FeedDataDisplayManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC72591EDAE54F0002D469 /* FeedDataDisplayManagerDelegate.swift */; };
+		9EFC72791EDBFB4B0002D469 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC725D1EDBFB4B0002D469 /* DetailInteractor.swift */; };
+		9EFC727A1EDBFB4B0002D469 /* DetailInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC725E1EDBFB4B0002D469 /* DetailInteractorInput.swift */; };
+		9EFC727B1EDBFB4B0002D469 /* DetailInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC725F1EDBFB4B0002D469 /* DetailInteractorOutput.swift */; };
+		9EFC727C1EDBFB4B0002D469 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC72611EDBFB4B0002D469 /* DetailPresenter.swift */; };
+		9EFC727D1EDBFB4B0002D469 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC72631EDBFB4B0002D469 /* DetailRouter.swift */; };
+		9EFC727E1EDBFB4B0002D469 /* DetailRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC72641EDBFB4B0002D469 /* DetailRouterInput.swift */; };
+		9EFC727F1EDBFB4B0002D469 /* NewsDetailTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC72681EDBFB4B0002D469 /* NewsDetailTextCell.swift */; };
+		9EFC72801EDBFB4B0002D469 /* NewsDetailTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EFC72691EDBFB4B0002D469 /* NewsDetailTextCell.xib */; };
+		9EFC72811EDBFB4B0002D469 /* NewsDetailTextCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC726A1EDBFB4B0002D469 /* NewsDetailTextCellViewModel.swift */; };
+		9EFC72821EDBFB4B0002D469 /* NewsDetailTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC726C1EDBFB4B0002D469 /* NewsDetailTitleCell.swift */; };
+		9EFC72831EDBFB4B0002D469 /* NewsDetailTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EFC726D1EDBFB4B0002D469 /* NewsDetailTitleCell.xib */; };
+		9EFC72841EDBFB4B0002D469 /* NewsDetailTitleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC726E1EDBFB4B0002D469 /* NewsDetailTitleCellViewModel.swift */; };
+		9EFC72851EDBFB4B0002D469 /* DetailCellViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC72701EDBFB4B0002D469 /* DetailCellViewModelFactory.swift */; };
+		9EFC72861EDBFB4B0002D469 /* DetailCellViewModelFactoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC72711EDBFB4B0002D469 /* DetailCellViewModelFactoryImpl.swift */; };
+		9EFC72871EDBFB4B0002D469 /* DetailDataDisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC72731EDBFB4B0002D469 /* DetailDataDisplayManager.swift */; };
+		9EFC72891EDBFB4B0002D469 /* DetailDataDisplayManagerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC72751EDBFB4B0002D469 /* DetailDataDisplayManagerImpl.swift */; };
+		9EFC728A1EDBFB4B0002D469 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC72761EDBFB4B0002D469 /* DetailViewController.swift */; };
+		9EFC728B1EDBFB4B0002D469 /* DetailViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC72771EDBFB4B0002D469 /* DetailViewInput.swift */; };
+		9EFC728C1EDBFB4B0002D469 /* DetailViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC72781EDBFB4B0002D469 /* DetailViewOutput.swift */; };
+		9EFC728F1EDBFC300002D469 /* NewsDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC728E1EDBFC300002D469 /* NewsDetailService.swift */; };
+		9EFC72911EDBFCF30002D469 /* NewsDetailServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC72901EDBFCF30002D469 /* NewsDetailServiceImpl.swift */; };
+		9EFC72941EDC08280002D469 /* ModuleConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC72931EDC08280002D469 /* ModuleConfigurable.swift */; };
+		9EFC72961EDC099F0002D469 /* DetailModuleConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC72951EDC099F0002D469 /* DetailModuleConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -147,6 +170,29 @@
 		9EFC72551EDAB5100002D469 /* NewsFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFetcher.swift; sourceTree = "<group>"; };
 		9EFC72571EDAB5220002D469 /* NewsFetcherImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFetcherImpl.swift; sourceTree = "<group>"; };
 		9EFC72591EDAE54F0002D469 /* FeedDataDisplayManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedDataDisplayManagerDelegate.swift; sourceTree = "<group>"; };
+		9EFC725D1EDBFB4B0002D469 /* DetailInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
+		9EFC725E1EDBFB4B0002D469 /* DetailInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailInteractorInput.swift; sourceTree = "<group>"; };
+		9EFC725F1EDBFB4B0002D469 /* DetailInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailInteractorOutput.swift; sourceTree = "<group>"; };
+		9EFC72611EDBFB4B0002D469 /* DetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		9EFC72631EDBFB4B0002D469 /* DetailRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
+		9EFC72641EDBFB4B0002D469 /* DetailRouterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRouterInput.swift; sourceTree = "<group>"; };
+		9EFC72681EDBFB4B0002D469 /* NewsDetailTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailTextCell.swift; sourceTree = "<group>"; };
+		9EFC72691EDBFB4B0002D469 /* NewsDetailTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsDetailTextCell.xib; sourceTree = "<group>"; };
+		9EFC726A1EDBFB4B0002D469 /* NewsDetailTextCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailTextCellViewModel.swift; sourceTree = "<group>"; };
+		9EFC726C1EDBFB4B0002D469 /* NewsDetailTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailTitleCell.swift; sourceTree = "<group>"; };
+		9EFC726D1EDBFB4B0002D469 /* NewsDetailTitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsDetailTitleCell.xib; sourceTree = "<group>"; };
+		9EFC726E1EDBFB4B0002D469 /* NewsDetailTitleCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailTitleCellViewModel.swift; sourceTree = "<group>"; };
+		9EFC72701EDBFB4B0002D469 /* DetailCellViewModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCellViewModelFactory.swift; sourceTree = "<group>"; };
+		9EFC72711EDBFB4B0002D469 /* DetailCellViewModelFactoryImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCellViewModelFactoryImpl.swift; sourceTree = "<group>"; };
+		9EFC72731EDBFB4B0002D469 /* DetailDataDisplayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailDataDisplayManager.swift; sourceTree = "<group>"; };
+		9EFC72751EDBFB4B0002D469 /* DetailDataDisplayManagerImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailDataDisplayManagerImpl.swift; sourceTree = "<group>"; };
+		9EFC72761EDBFB4B0002D469 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		9EFC72771EDBFB4B0002D469 /* DetailViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewInput.swift; sourceTree = "<group>"; };
+		9EFC72781EDBFB4B0002D469 /* DetailViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewOutput.swift; sourceTree = "<group>"; };
+		9EFC728E1EDBFC300002D469 /* NewsDetailService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailService.swift; sourceTree = "<group>"; };
+		9EFC72901EDBFCF30002D469 /* NewsDetailServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailServiceImpl.swift; sourceTree = "<group>"; };
+		9EFC72931EDC08280002D469 /* ModuleConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleConfigurable.swift; sourceTree = "<group>"; };
+		9EFC72951EDC099F0002D469 /* DetailModuleConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailModuleConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +326,7 @@
 		9EFC71A41ED85A220002D469 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				9EFC72921EDC081E0002D469 /* ModuleConfigurable */,
 				9EFC71FB1ED868A30002D469 /* TableViewHeightCalculator */,
 				9EFC71A51ED85A220002D469 /* ConfigurableCell */,
 			);
@@ -297,6 +344,7 @@
 		9EFC71A71ED85A220002D469 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				9EFC725B1EDBFB4B0002D469 /* Detail */,
 				9EFC71F91ED863BA0002D469 /* Main.storyboard */,
 				9EFC71B81ED85BD10002D469 /* Feed */,
 			);
@@ -306,6 +354,7 @@
 		9EFC71A81ED85A220002D469 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				9EFC728D1EDBFC160002D469 /* NewsDetailService */,
 				9EFC723E1ED9E0230002D469 /* NewsFeedService */,
 			);
 			path = Services;
@@ -579,6 +628,122 @@
 			path = NewsFetcher;
 			sourceTree = "<group>";
 		};
+		9EFC725B1EDBFB4B0002D469 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				9EFC725C1EDBFB4B0002D469 /* Interactor */,
+				9EFC72601EDBFB4B0002D469 /* Presenter */,
+				9EFC72621EDBFB4B0002D469 /* Router */,
+				9EFC72651EDBFB4B0002D469 /* View */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		9EFC725C1EDBFB4B0002D469 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				9EFC725D1EDBFB4B0002D469 /* DetailInteractor.swift */,
+				9EFC725E1EDBFB4B0002D469 /* DetailInteractorInput.swift */,
+				9EFC725F1EDBFB4B0002D469 /* DetailInteractorOutput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		9EFC72601EDBFB4B0002D469 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				9EFC72611EDBFB4B0002D469 /* DetailPresenter.swift */,
+				9EFC72951EDC099F0002D469 /* DetailModuleConfiguration.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		9EFC72621EDBFB4B0002D469 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				9EFC72631EDBFB4B0002D469 /* DetailRouter.swift */,
+				9EFC72641EDBFB4B0002D469 /* DetailRouterInput.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		9EFC72651EDBFB4B0002D469 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9EFC72661EDBFB4B0002D469 /* Cells */,
+				9EFC726F1EDBFB4B0002D469 /* CellViewModelFactory */,
+				9EFC72721EDBFB4B0002D469 /* DataDisplayManager */,
+				9EFC72761EDBFB4B0002D469 /* DetailViewController.swift */,
+				9EFC72771EDBFB4B0002D469 /* DetailViewInput.swift */,
+				9EFC72781EDBFB4B0002D469 /* DetailViewOutput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9EFC72661EDBFB4B0002D469 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9EFC72671EDBFB4B0002D469 /* Text */,
+				9EFC726B1EDBFB4B0002D469 /* Title */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		9EFC72671EDBFB4B0002D469 /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				9EFC72681EDBFB4B0002D469 /* NewsDetailTextCell.swift */,
+				9EFC72691EDBFB4B0002D469 /* NewsDetailTextCell.xib */,
+				9EFC726A1EDBFB4B0002D469 /* NewsDetailTextCellViewModel.swift */,
+			);
+			path = Text;
+			sourceTree = "<group>";
+		};
+		9EFC726B1EDBFB4B0002D469 /* Title */ = {
+			isa = PBXGroup;
+			children = (
+				9EFC726C1EDBFB4B0002D469 /* NewsDetailTitleCell.swift */,
+				9EFC726D1EDBFB4B0002D469 /* NewsDetailTitleCell.xib */,
+				9EFC726E1EDBFB4B0002D469 /* NewsDetailTitleCellViewModel.swift */,
+			);
+			path = Title;
+			sourceTree = "<group>";
+		};
+		9EFC726F1EDBFB4B0002D469 /* CellViewModelFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9EFC72701EDBFB4B0002D469 /* DetailCellViewModelFactory.swift */,
+				9EFC72711EDBFB4B0002D469 /* DetailCellViewModelFactoryImpl.swift */,
+			);
+			path = CellViewModelFactory;
+			sourceTree = "<group>";
+		};
+		9EFC72721EDBFB4B0002D469 /* DataDisplayManager */ = {
+			isa = PBXGroup;
+			children = (
+				9EFC72731EDBFB4B0002D469 /* DetailDataDisplayManager.swift */,
+				9EFC72751EDBFB4B0002D469 /* DetailDataDisplayManagerImpl.swift */,
+			);
+			path = DataDisplayManager;
+			sourceTree = "<group>";
+		};
+		9EFC728D1EDBFC160002D469 /* NewsDetailService */ = {
+			isa = PBXGroup;
+			children = (
+				9EFC728E1EDBFC300002D469 /* NewsDetailService.swift */,
+				9EFC72901EDBFCF30002D469 /* NewsDetailServiceImpl.swift */,
+			);
+			path = NewsDetailService;
+			sourceTree = "<group>";
+		};
+		9EFC72921EDC081E0002D469 /* ModuleConfigurable */ = {
+			isa = PBXGroup;
+			children = (
+				9EFC72931EDC08280002D469 /* ModuleConfigurable.swift */,
+			);
+			path = ModuleConfigurable;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -641,6 +806,8 @@
 			files = (
 				9EFC71B21ED85AA60002D469 /* Assets.xcassets in Resources */,
 				9EFC71FA1ED863BA0002D469 /* Main.storyboard in Resources */,
+				9EFC72801EDBFB4B0002D469 /* NewsDetailTextCell.xib in Resources */,
+				9EFC72831EDBFB4B0002D469 /* NewsDetailTitleCell.xib in Resources */,
 				9EFC71E11ED85D600002D469 /* NewsFeedCell.xib in Resources */,
 				9EFC71B31ED85AA60002D469 /* LaunchScreen.storyboard in Resources */,
 				9EFC71B41ED85AA60002D469 /* Info.plist in Resources */,
@@ -669,25 +836,37 @@
 				9EFC72171ED878020002D469 /* RequestFactoryImplementation.swift in Sources */,
 				9EFC72351ED9B46E0002D469 /* BriefNewsMapper.swift in Sources */,
 				9EFC71D51ED85CDC0002D469 /* FeedDataDisplayManager.swift in Sources */,
+				9EFC72891EDBFB4B0002D469 /* DetailDataDisplayManagerImpl.swift in Sources */,
 				9EFC72471ED9F0EB0002D469 /* NewsCleanerImpl.swift in Sources */,
 				9EFC72131ED878020002D469 /* NetworkRequestConstants.swift in Sources */,
 				9EFC72201ED878020002D469 /* JSONDeserializer.swift in Sources */,
+				9EFC72851EDBFB4B0002D469 /* DetailCellViewModelFactory.swift in Sources */,
 				9EFC71E51ED85DC30002D469 /* FactoryProviderImpl.swift in Sources */,
+				9EFC72811EDBFB4B0002D469 /* NewsDetailTextCellViewModel.swift in Sources */,
+				9EFC727A1EDBFB4B0002D469 /* DetailInteractorInput.swift in Sources */,
+				9EFC728C1EDBFB4B0002D469 /* DetailViewOutput.swift in Sources */,
 				9EFC72531EDAB1800002D469 /* NewsFeedServiceConfiguration.swift in Sources */,
 				9EFC71AA1ED85A220002D469 /* UITableView.swift in Sources */,
+				9EFC727B1EDBFB4B0002D469 /* DetailInteractorOutput.swift in Sources */,
 				9EFC71DF1ED85D510002D469 /* NewsFeedCellViewModel.swift in Sources */,
 				9EFC71CA1ED85C3B0002D469 /* FeedPresenter.swift in Sources */,
 				9EFC71C61ED85C280002D469 /* FeedRouter.swift in Sources */,
+				9EFC72861EDBFB4B0002D469 /* DetailCellViewModelFactoryImpl.swift in Sources */,
+				9EFC728B1EDBFB4B0002D469 /* DetailViewInput.swift in Sources */,
 				9EFC71D71ED85CF00002D469 /* FeedDataDisplayManagerImpl.swift in Sources */,
 				9EFC71E31ED85DB60002D469 /* FactoryProvider.swift in Sources */,
 				9EFC71F31ED85E460002D469 /* UserStoryFactory.swift in Sources */,
 				9EFC72391ED9B8230002D469 /* MapperError.swift in Sources */,
 				9EFC72141ED878020002D469 /* NetworkRequestErrors.swift in Sources */,
 				9EFC721A1ED878020002D469 /* URLFactory.swift in Sources */,
+				9EFC727C1EDBFB4B0002D469 /* DetailPresenter.swift in Sources */,
 				9EFC71C01ED85BF20002D469 /* FeedViewOutput.swift in Sources */,
+				9EFC72791EDBFB4B0002D469 /* DetailInteractor.swift in Sources */,
 				9EFC71C81ED85C310002D469 /* FeedRouterInput.swift in Sources */,
 				9EFC721C1ED878020002D469 /* URLParametersTransformable.swift in Sources */,
 				9EFC722A1ED9AA180002D469 /* NewsModel.xcdatamodeld in Sources */,
+				9EFC728A1EDBFB4B0002D469 /* DetailViewController.swift in Sources */,
+				9EFC728F1EDBFC300002D469 /* NewsDetailService.swift in Sources */,
 				9EFC723B1ED9B9480002D469 /* NSManagedObject.swift in Sources */,
 				9EFC721B1ED878020002D469 /* URLFactoryImplementation.swift in Sources */,
 				9EFC71DD1ED85D440002D469 /* NewsFeedCell.swift in Sources */,
@@ -699,23 +878,32 @@
 				9EFC722E1ED9B2D80002D469 /* DetailNewsModel.swift in Sources */,
 				9EFC71BE1ED85BE70002D469 /* FeedViewInput.swift in Sources */,
 				9EFC725A1EDAE54F0002D469 /* FeedDataDisplayManagerDelegate.swift in Sources */,
+				9EFC72911EDBFCF30002D469 /* NewsDetailServiceImpl.swift in Sources */,
 				9EFC71B71ED85AB00002D469 /* AppDelegate.swift in Sources */,
+				9EFC72961EDC099F0002D469 /* DetailModuleConfiguration.swift in Sources */,
 				9EFC72581EDAB5220002D469 /* NewsFetcherImpl.swift in Sources */,
 				9EFC71E91ED85E0A0002D469 /* CoreFactoryImpl.swift in Sources */,
 				9EFC71D91ED85D1B0002D469 /* FeedCellViewModelFactory.swift in Sources */,
 				9EFC71ED1ED85E1E0002D469 /* HelperFactoryImpl.swift in Sources */,
 				9EFC71C21ED85BFC0002D469 /* FeedViewController.swift in Sources */,
 				9EFC71AB1ED85A220002D469 /* UIViewController.swift in Sources */,
+				9EFC72941EDC08280002D469 /* ModuleConfigurable.swift in Sources */,
+				9EFC72871EDBFB4B0002D469 /* DetailDataDisplayManager.swift in Sources */,
 				9EFC72451ED9F0CA0002D469 /* NewsCleaner.swift in Sources */,
 				9EFC72251ED9A5870002D469 /* CoreDataCreatorImpl.swift in Sources */,
 				9EFC72421ED9E12C0002D469 /* NewsFeedServiceImpl.swift in Sources */,
 				9EFC72371ED9B6010002D469 /* BriefNewsMapperImpl.swift in Sources */,
 				9EFC72301ED9B2E30002D469 /* BriefNewsModel.swift in Sources */,
+				9EFC727E1EDBFB4B0002D469 /* DetailRouterInput.swift in Sources */,
+				9EFC727F1EDBFB4B0002D469 /* NewsDetailTextCell.swift in Sources */,
 				9EFC71F11ED85E360002D469 /* ServiceFactoryImpl.swift in Sources */,
+				9EFC72841EDBFB4B0002D469 /* NewsDetailTitleCellViewModel.swift in Sources */,
 				9EFC71FF1ED868A30002D469 /* TableViewHeightCalculatorImplementation.swift in Sources */,
 				9EFC71CE1ED85C550002D469 /* FeedInteractorInput.swift in Sources */,
 				9EFC71F81ED860F80002D469 /* BaseFactory.swift in Sources */,
+				9EFC727D1EDBFB4B0002D469 /* DetailRouter.swift in Sources */,
 				9EFC72161ED878020002D469 /* RequestFactoryConfiguration.swift in Sources */,
+				9EFC72821EDBFB4B0002D469 /* NewsDetailTitleCell.swift in Sources */,
 				9EFC72231ED9A5630002D469 /* CoreDataCreator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -874,6 +1062,7 @@
 				9EFC71931ED855250002D469 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

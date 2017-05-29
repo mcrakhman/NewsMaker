@@ -7,6 +7,15 @@
 //
 
 class ServiceFactoryImpl: BaseFactory, ServiceFactory {
+
+    func newsDetailService() -> NewsDetailService {
+        let coreFactory = factoryProvider.coreFactory()
+        return NewsDetailServiceImpl(urlFactory: coreFactory.urlFactory(),
+                                     requestFactory: coreFactory.requestFactory(),
+                                     networkClient: coreFactory.networkClient(),
+                                     deserializer: coreFactory.jsonDeserializer())
+    }
+
     func newsFeedService() -> NewsFeedService {
         let coreFactory = factoryProvider.coreFactory()
         return NewsFeedServiceImpl(urlFactory: coreFactory.urlFactory(),

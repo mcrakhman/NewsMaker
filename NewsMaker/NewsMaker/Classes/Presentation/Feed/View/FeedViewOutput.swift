@@ -11,4 +11,5 @@ protocol FeedViewOutput {
     func willDisplayModel(at index: Int)
     func didTapActionButton()
     func didPullRefresh()
+    func didSelectNews(withIdentifier identifier: String)
 }

@@ -1,5 +1,5 @@
 //
-//  FeedDataDisplayManagerImpl.swift
+//  DetailDataDisplayManagerImpl.swift
 //  NewsMaker
 //
 //  Created by m.rakhmanov on 26.05.17.
@@ -8,32 +8,24 @@
 
 import UIKit
 
-class FeedDataDisplayManagerImpl: NSObject {
+class DetailDataDisplayManagerImpl: NSObject {
 
     fileprivate let heightCalculator: TableViewHeightCalculator
-    fileprivate let cellViewModelFactory: FeedCellViewModelFactory
+    fileprivate let cellViewModelFactory: DetailCellViewModelFactory
     fileprivate var viewModels: [CellViewModel] = []
-    fileprivate weak var delegate: FeedDataDisplayManagerDelegate?
 
     init(heightCalculator: TableViewHeightCalculator,
-         cellViewModelFactory: FeedCellViewModelFactory,
-         delegate: FeedDataDisplayManagerDelegate) {
+         cellViewModelFactory: DetailCellViewModelFactory) {
         self.heightCalculator = heightCalculator
         self.cellViewModelFactory = cellViewModelFactory
-        self.delegate = delegate
     }
 }
 
-extension FeedDataDisplayManagerImpl: FeedDataDisplayManager {
+extension DetailDataDisplayManagerImpl: DetailDataDisplayManager {
 
-    func replace(news: [BriefNewsModel]) {
+    func show(news: DetailNewsModel) {
         heightCalculator.clearCache()
         viewModels = cellViewModelFactory.viewModels(fromNews: news)
-    }
-
-    func append(news: [BriefNewsModel]) {
-        let newViewModels = cellViewModelFactory.viewModels(fromNews: news)
-        viewModels += newViewModels
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -56,19 +48,5 @@ extension FeedDataDisplayManagerImpl: FeedDataDisplayManager {
         cell.configure(with: viewModel)
 
         return cell as! UITableViewCell
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let feedViewModel = viewModels[indexPath.row] as? NewsFeedCellViewModel
-            else {
-                return
-        }
-
-        let identifier = feedViewModel.identifier
-        delegate?.didSelectNews(withIdentifier: identifier)
-    }
-
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        delegate?.willDisplayCell(at: indexPath)
     }
 }

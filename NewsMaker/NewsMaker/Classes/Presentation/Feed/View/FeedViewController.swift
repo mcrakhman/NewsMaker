@@ -12,6 +12,7 @@ class FeedViewController: UIViewController {
 
     fileprivate struct Constants {
         static let footerHeight: CGFloat = 50.0
+        static let title = "Новости"
     }
 
     @IBOutlet weak var tableView: UITableView!
@@ -63,6 +64,7 @@ class FeedViewController: UIViewController {
 
     private func setupInitialState() {
         setupTableView()
+        title = Constants.title
         loadingView.isHidden = true
         messageView.isHidden = true
         tableView.isHidden = true
@@ -127,5 +129,9 @@ extension FeedViewController: FeedViewInput {
 extension FeedViewController: FeedDataDisplayManagerDelegate {
     func willDisplayCell(at indexPath: IndexPath) {
         output.willDisplayModel(at: indexPath.row)
+    }
+
+    func didSelectNews(withIdentifier identifier: String) {
+        output.didSelectNews(withIdentifier: identifier)
     }
 }

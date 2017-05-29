@@ -10,4 +10,5 @@ import Foundation
 
 protocol FeedDataDisplayManagerDelegate: class {
     func willDisplayCell(at indexPath: IndexPath)
+    func didSelectNews(withIdentifier identifier: String)
 }

@@ -8,4 +8,5 @@
 
 protocol ServiceFactory {
     func newsFeedService() -> NewsFeedService
+    func newsDetailService() -> NewsDetailService
 }
