@@ -10,7 +10,7 @@ import Foundation
 
 final class FeedPresenter {
     fileprivate struct Constants {
-        static let amountPerPage = 20
+        static let amountPerPage = 25
         static let noNewsFoundMessage = "Новости не найдены, нажмите ок, чтобы перезагрузить"
     }
 
